@@ -6880,6 +6880,7 @@ class TCPDF {
 			if (!@TCPDF_STATIC::file_exists($file)) {
 				return false;
 			}
+			$file = TCPDF_STATIC::encodeUrlQuery($file);
 			if (($imsize = @getimagesize($file)) === FALSE) {
 				if (in_array($file, $this->imagekeys)) {
 					// get existing image data
